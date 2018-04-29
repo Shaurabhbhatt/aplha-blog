@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to:'pages#about'
   resources :articles
-  get 'signup', to:'users#new'
+  get 'signup', to:'users#new'  
+  get 'upload', to:'photos#new'
+
   resources :users, except: [:new]
-  
+  resources :photos, except: [:new]
+  resources :categories, except: [:destroy]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'

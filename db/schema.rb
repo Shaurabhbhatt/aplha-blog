@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418165014) do
+ActiveRecord::Schema.define(version: 20180424081949) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -21,13 +21,24 @@ ActiveRecord::Schema.define(version: 20180418165014) do
     t.integer  "user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "email"
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.boolean  "admin",           default: false
   end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "photo_type"
+    t.string   "sequence"
+    t.boolean  "active",     default: false
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

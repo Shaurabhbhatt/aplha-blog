@@ -7,6 +7,9 @@ gem 'rails', '4.2.5'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.0.7'
+gem 'carrierwave', '~> 1.0'
+gem 'rmagick'
+gem 'autoprefixer-rails'
 
 gem 'bootstrap-will_paginate', '0.0.10'
 

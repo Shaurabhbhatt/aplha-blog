@@ -1,0 +1,13 @@
+<h1 align="center">Welcome to <%= @photos[0].user.username %>'s page</h1>
+ <% @photos.each_slice(4) do |photos| %>
+<div class="row" style="width:100%;     padding-bottom:30px;">
+   <% photos.each do |photo| %>
+    <div class="col-md-3">
+        <%= image_tag photo.image.thumb.url, class:"img_preview img-responsive"%>
+    </div>
+    <%end%>
+</div>
+<style>
+  .img_preview{width:100%;}
+</style>
+<%end%>
